@@ -51,7 +51,7 @@ public class LoginPageTest extends BaseTest{
 	
 	@Description("TC 03- User Login Test")
 	@Severity(SeverityLevel.BLOCKER)
-	@Test
+	@Test(priority=1)
 	public void loginTest(){
 		String userName=prop.getProperty("username").trim();
 		String passWord=prop.getProperty("password").trim();
