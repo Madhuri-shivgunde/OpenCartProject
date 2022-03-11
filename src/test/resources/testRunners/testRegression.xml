@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="regression_suite" thread-count="2" parallel="tests" verbose="4">
+	
+	<listeners>
+
+		<listener class-name="com.qa.opencart.listeners.AnnotationTransformerListener"/>
+		<listener class-name="com.qa.opencart.listeners.ExtentReportListener"/>
+		<listener class-name="com.qa.opencart.listeners.TestAllureListener"/>
+
+	</listeners>
+
+	<test name="LoginTest">
+		<classes>
+			<class name="com.qa.opencart.tests.LoginPageTest" />
+		</classes>
+	</test>
+
+	<test name="Registration Test">
+		<classes>
+			<class name="com.qa.opencart.tests.RegisterPageTest" />
+		</classes>
+	</test>
+
+	<test name="Account Test">
+		<classes>
+			<class name="com.qa.opencart.tests.AccountPageTest" />
+		</classes>
+	</test>
+	<test name="ProductInfo Test">
+		<classes>
+			<class name="com.qa.opencart.tests.productInfoPageTest" />
+		</classes>
+	</test>
+	
+
+
+</suite>
+
+<!-- 
+Attributes of <suite>
+	1) thread-count="n" paralle="tests/classes/methods" :
+			 this will be used to achieve multithreaded concepts
+			e.g.thread-count="3" paralle="tests"
+			here 3 threads will gets created  and run tests parallely.
+
+			
+	2) verbose="n", here value of n should be in range 1 to 10
+
+			max value =10	
+			min value =1
+		Here, verbose is used to provide TestNg log information in output
+		if you put 1, it gives very less log info form TestNg
+		if you put 10, it gives all log info
+		normally , put value  3or 4
+
+
+<parameter name="" value="">
+	This tag will pass to specified parameter value to test
+	generally, used to pass environment values thats neede for execution of tests
+	like, browser name, url,login details etc.
+	
+-->
