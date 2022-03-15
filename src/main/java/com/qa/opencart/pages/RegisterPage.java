@@ -131,7 +131,7 @@ public class RegisterPage {
 		eleUtil.doClick(btnContinue);
 
 		
-		if(firstName.isBlank() || firstName.length()==0 || firstName.length()>32)
+		if(firstName.isEmpty() || firstName.length()==0 || firstName.length()>32)
 		{
 			System.out.println("First name is: "+firstName);
 			if(eleUtil.doGetText(errorFname).contains(Constant.REGISTER_PAGE_FNAME_SIZE_ERROR)) {
@@ -139,7 +139,7 @@ public class RegisterPage {
 			}
 		}
 		
-		if(lastName.isBlank() || lastName.length()==0 || lastName.length()>32)
+		if(lastName.isEmpty() || lastName.length()==0 || lastName.length()>32)
 		{
 			System.out.println("Last name is: "+lastName);
 			if(eleUtil.doGetText(errorLname).contains(Constant.REGISTER_PAGE_LNAME_SIZE_ERROR)) {
@@ -147,7 +147,7 @@ public class RegisterPage {
 			}
 		}
 		
-		if(email.isBlank() || email.length()==0 || !email.endsWith(".com") || !email.contains("@"))
+		if(email.isEmpty() || email.length()==0 || !email.endsWith(".com") || !email.contains("@"))
 		{
 			if(eleUtil.doGetText(errorEmail).contains(Constant.REGISTER_PAGE_EMAIL_ERROR)) {
 				return true;
@@ -155,7 +155,7 @@ public class RegisterPage {
 		}
 		//isNumberic(tele)
 		
-		if(tele.isBlank() || tele.length()<3 || tele.length()>32 || !isNumeric(tele))
+		if(tele.isEmpty() || tele.length()<3 || tele.length()>32 || !isNumeric(tele))
 		{
 			System.out.println("tele no is: "+tele);
 			if(eleUtil.doGetText(errorTele).contains(Constant.REGISTER_PAGE_TELE_SIZE_ERROR)) {
@@ -163,7 +163,7 @@ public class RegisterPage {
 			}
 		}
 		
-		if(password.isBlank() || password.length()<0 || password.length()>20)
+		if(password.isEmpty() || password.length()<0 || password.length()>20)
 		{
 			System.out.println("Password is: "+password);
 			if(eleUtil.doGetText(errorPass).contains(Constant.REGISTER_PAGE_PASS_ERROR)) {
@@ -171,7 +171,7 @@ public class RegisterPage {
 			}
 		}
 		
-		if(confirmPass.isBlank() || confirmPass.length()<0 || confirmPass.length()>20)
+		if(confirmPass.isEmpty() || confirmPass.length()<0 || confirmPass.length()>20)
 		{
 			System.out.println("Confirm Password is: "+confirmPass);
 			if(eleUtil.doGetText(errorPass).contains(Constant.REGISTER_PAGE_PASS_ERROR)) {
@@ -223,7 +223,7 @@ public class RegisterPage {
 	public boolean isNumeric(String tnum){
 		Long val;
 		try {
-			if(!tnum.isBlank()) {
+			if(!tnum.isEmpty()) {
 	        val = Long.parseLong(tnum);
 	        return true;
 			}
